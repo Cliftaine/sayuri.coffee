@@ -1,4 +1,4 @@
-*Hola Mundo
+# Hola Mundo
 
 La intension era realizar un curso de 0 a programador super sr nivel Saian 1000, pero ya vi que vamos avanzados, entonces solo para no obviar, dejemos el programa más básico de todos. Una salida de texto, el hola mundo de todos los lenguajes, aunque en esta seccion agregaremos algunos conceptos del runtime de python y vamos a entender qué tanta semejanza tiene de C.
 
@@ -12,7 +12,7 @@ print("Hellou, estas bien bonita ❤️")
 
 Genial, ya puedes agregar a tu curriculum que sabes python :P
 
-Python nos la deja muy fácil, se asume que el scope del programa es "global, sin embargo, podemos ir a profundidad e ir brincando de scopes tan complejos como C o Rust, la ejecución del programa tiene un orden, es el siguiente:
+Python nos la deja muy fácil, se asume que el scope del programa es "global", sin embargo, podemos ir a profundidad e ir brincando de scopes tan complejos como C o Rust, la ejecución del programa tiene un orden, es el siguiente:
 
 
 ```Python
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 ```
 
-*Tipos de datos en python
+# Tipos de datos en python
 
 Creo que esta demas que te explique lo bássico de los tipos de datos, pero si profundizar en cosas no tan básicas con las que cuenta python.
 
@@ -87,7 +87,7 @@ mordidas = bytes() #bytes
 ```
 
 
-*Bucles
+# Bucles
 
 De igual forma, no voy a entrar a bucles de manera superficial porque seguro ya lo tienes, si le sabes :P.
 Vamos a ver algo más cool.
@@ -161,20 +161,20 @@ for i in n:#Entramso al primer nivel
 ```
 
 
-**Implicaciones de generar bucles en complejidad algoritmica
+## Implicaciones de generar bucles en complejidad algoritmica
 
 Es importante entender que los recursos de una computadora deben de ser administrados de manera correcta, principalmente con limpieza de grandes datos, tenemos tiempos de procesamiento demasiado largos (horas, días), con esto en mente es obvio que debemos ser certeros al escribir programas.
 
 Principalmente contamos con dos recursos que se encuentran ligados:
 
-** Memoria (Complejidad espacial)
+## Memoria (Complejidad espacial)
 La memoria puede ser vista como espacios en donde guardaremos información. Pensemos en un librero, hay espacios "estandar" en donde logramos acomodar x cantidad de libros, sin embargo, los libros de bolsillo ocupan menos espacio que una biblia letra grande para abuelitos. 
 
 De la misma forma los datos en python tienen cierta cantidad de "bytes" dependiendo del tipo de dato. Que si es entero es un byte, que si es char es un byte, pero también hay "depende", un tipo de dato string por ejemplo, dependera de la cantidad de caracteres que tiene asociado, sin embargo basta con sumar la cantidad de bytes-caracteres que esta tiene.
 Es cierto que hoy día un byte es una pisca de sal en una mesa. Sin embargo, en programas realmente grandes o en lo que estarás haciendo en el futuro, esas pequeñas asignaciones logran desbordar la memoria. E
 
 
-** Tiempo de procesamiento (Complejidad temporal)
+## Tiempo de procesamiento (Complejidad temporal)
 Por otro lado, tenemos el tiempo, que basicamente es el como procesamos esos bytes, e independientemente de que nuestro procesador tenga hilos o multiprocesamiento, todo ocurre de manera lineal, es importante entender aqui que todos los programas van linea a linea, aún cuando tengas computo paralelo deberás hacer una sincronización de recursos que implica que todo ocurra, en algun punto, de manera lineal. 
 
 Debes ser precisa al momento de generar bucles o bucles anidados, una estructura:
