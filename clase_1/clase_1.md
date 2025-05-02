@@ -1,8 +1,166 @@
 *Hola Mundo
 
+La intension era realizar un curso de 0 a programador super sr nivel Saian 1000, pero ya vi que vamos avanzados, entonces solo para no obviar, dejemos el programa más básico de todos. Una salida de texto, el hola mundo de todos los lenguajes, aunque en esta seccion agregaremos algunos conceptos del runtime de python y vamos a entender qué tanta semejanza tiene de C.
+
+De manera sencilla este es un hola mundo:
+
+```Python
+
+print("Hellou, estas bien bonita ❤️")
+```
+
+
+Genial, ya puedes agregar a tu curriculum que sabes python :P
+
+Python nos la deja muy fácil, se asume que el scope del programa es "global, sin embargo, podemos ir a profundidad e ir brincando de scopes tan complejos como C o Rust, la ejecución del programa tiene un orden, es el siguiente:
+
+
+```Python
+# 1. Se ejecuta primero (nivel de módulo)
+import hellou
+print("Este código se ejecuta al importar o ejecutar")
+
+# 2. Solo se define, no se ejecuta
+def mi_funcion():
+    print("Dentro de la función")
+
+# 3. Se ejecuta si el archivo se ejecuta directamente
+if __name__ == '__main__':
+    print("Código del punto de entrada")
+    # 4. Ahora sí se ejecuta la función
+    mi_funcion()
+
+```
+
 *Tipos de datos en python
 
+Creo que esta demas que te explique lo bássico de los tipos de datos, pero si profundizar en cosas no tan básicas con las que cuenta python.
+
+Si bien es un lenguaje "no typado", podemos sugerir el typado y con ello el programa tendra un comportamiento diferente, ejemplifiquemoslo con funciones y casteos
+
+En caso de que queira que un tipo de dato ahuevi tenga valor dado se puede generar la variable con un tipo de dato vacio, por ejemplo:
+
+```Python
+cadena= "" #string
+
+entero= 0 #int
+
+flotante = 0.0 #float
+
+complejo = 0j #complex
+
+booleano = True
+
+# datos estructurados
+
+listona = [] #list
+
+diccionarion = {} #diccionarios, mapeos, etc
+
+conjunto = set() #conjuntos
+
+mordidas = b"" #bytes
+```
+
+Aunque siempre te puedes ver más fresa, propia, bonita, chula re preciosa!, Hagale así:
+
+```Python
+cadena= str() #string
+
+entero= int() #int
+
+flotante = float() #float
+
+complejo = complex() #complex
+
+booleano = bool()
+
+# datos estructurados
+
+listona = list() #list
+
+diccionarion = dict() #diccionarios, mapeos, etc
+
+conjunto = set() #conjuntos
+
+mordidas = bytes() #bytes
+```
+
+
 *Bucles
+
+De igual forma, no voy a entrar a bucles de manera superficial porque seguro ya lo tienes, si le sabes :P.
+Vamos a ver algo más cool.
+
+Supongamos que tienes un ciclo en donde encontraste un dato reelevante y no vale la pena seguir buscando, en un data set:
+
+Dada una lista autocontenida de 3 elementos, oseaseee:
+
+```Python
+n=[
+  [1,2,3]
+  [4,5,6]
+  [7,8,9]
+]
+```
+
+Vamos a recuperar el primer elemento de cada sub lista en donde sea un numero divisible entre 2, para lo que la primer propuesta de solucion será:
+
+```Python
+n=[
+  [1,2,3]
+  [4,5,6]
+  [7,8,9]
+]
+
+nums=[]
+
+for i in n:#Entramso al primer nivel
+    for k in i:#Entramos al segundo nivel de la lista:
+        if k%2==0:#Si el numero es divisible entre 2 procedemos:
+            nums.append(k) #agregamos el numero a nuestra lista de numeros
+```
+
+```
+
+Si te das cuenta en este problema particular, esta solucion nos traeria el elemento 6 para el segunda sub lista, también podriamos controlarlo agregando un if, como lo siguiente:
+
+```Python
+n=[
+  [1,2,3]
+  [4,5,6]
+  [7,8,9]
+]
+
+nums=[]
+
+for i in n:
+    num=None#agregamos variable nula para asegurarnos que entramos solo a la primera
+    for k in i:
+        if k%2==0 AND num==None:#verificamos si num no ha sido accedida, es decir que no tenga otro valor que no sea null
+            num=k
+    nums.append(num) #agregamos el numero a nuestra lista de numeros
+```
+
+
+Sin embargo, esto nos quita tiempo de procesamiento, por lo que seria parar y pasar a la siguiente sublista, entoooooonces, para eso tenemos la instruccion ```break``` que para la ejecución del primer ciclo en el que estamos, y pasa al que lo contiene, es decir, para este caso salimos de k y regresamos a i
+
+```Python
+n=[
+  [1,2,3]
+  [4,5,6]
+  [7,8,9]
+]
+
+nums=[]
+
+for i in n:#Entramso al primer nivel
+    for k in i:#Entramos al segundo nivel de la lista:
+        if k%2==0:#Si el numero es divisible entre 2 procedemos:
+            nums.append(k) #agregamos el numero a nuestra lista de numeros
+            break
+
+```
 
 
 **Implicaciones de generar bucles en complejidad algoritmica
