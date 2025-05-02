@@ -121,8 +121,6 @@ for i in n:#Entramso al primer nivel
             nums.append(k) #agregamos el numero a nuestra lista de numeros
 ```
 
-```
-
 Si te das cuenta en este problema particular, esta solucion nos traeria el elemento 6 para el segunda sub lista, también podriamos controlarlo agregando un if, como lo siguiente:
 
 ```Python
